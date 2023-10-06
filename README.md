@@ -166,7 +166,7 @@ Due to the way memoized functions are cached, you can only have one `this.Once()
 All values are cached in [ConditionalWeakTable](https://learn.microsoft.com/en-us/dotnet/api/system.runtime.compilerservices.conditionalweaktable-2?view=net-7.0) by using object as a key. When object is destroyed, all memory is released and is made available for garbage collector to collect.
 
 ## Troubleshooting
-If you import package into your project and get `CacheStorage.cs(18,24): error CS0656: Missing compiler required member 'Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo` error, then ensure you followed installation instructions above in this page and set correct *Scripting backand & API compatibility level*
+If you import package into your project and get `CacheStorage.cs(18,24): error CS0656: Missing compiler required member 'Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo` error, then ensure you followed [installation instructions]((##%20Installation) and set correct *Scripting backand & API compatibility level*
 
 ## Licence
 Once you have purchased this package on [Unity's asset store](https://u3d.as/38ti) you are free to use it on any commercial projects of yours.
