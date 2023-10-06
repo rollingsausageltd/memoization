@@ -6,11 +6,15 @@ Package implements [Memoization](https://en.wikipedia.org/wiki/Memoization) tech
 
 Code is super lightweight (<10KB), performance orientated and [memory friendly](##%20Memory%20management) with no memory leaks.
 
-All code has no dependencies and would run on any Unity's project, in fact, it would run on any C# project. Memoization can be applied to any `object`, not just Unity's `MonoBehaviour`.
+Code utilises [dynamic static type](https://learn.microsoft.com/en-us/dotnet/csharp/advanced-topics/interop/using-type-dynamic), which does not work with IL2CPP.
+
+Memoization can be applied to any `object`, not just Unity's `MonoBehaviour`. In fact, code has no dependencies so it works on any C# project that supports dynamic types. 
 
 ## Installation
 Follow Unity's standard [Package Manager installation instructions](https://docs.unity3d.com/Manual/upm-ui-install.html).
 Link to a package on Unity Asset Store: https://u3d.as/38ti
+
+Once installed, ensure that your *Scripting backend* is set to `Mono` and *API compatibility level* is `.NET Framework`. Both settings can be found under Player settings.
 
 ## Basic Usage
 Say you have a standard `MonoBehaviour`
@@ -160,6 +164,9 @@ Due to the way memoized functions are cached, you can only have one `this.Once()
 
 ## Memory management
 All values are cached in [ConditionalWeakTable](https://learn.microsoft.com/en-us/dotnet/api/system.runtime.compilerservices.conditionalweaktable-2?view=net-7.0) by using object as a key. When object is destroyed, all memory is released and is made available for garbage collector to collect.
+
+## Troubleshooting
+If you import package into your project and get `CacheStorage.cs(18,24): error CS0656: Missing compiler required member 'Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo` error, then ensure you followed installation instructions above in this page and set correct *Scripting backand & API compatibility level*
 
 ## Licence
 Once you have purchased this package on [Unity's asset store](https://u3d.as/38ti) you are free to use it on any commercial projects of yours.
