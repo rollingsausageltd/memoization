@@ -4,7 +4,7 @@ This repository is intended for managing issues / feature requests / questions f
 ## Overview
 Package implements [Memoization](https://en.wikipedia.org/wiki/Memoization) technique into any Unity project (built-in, URP, HDRP, custom render pipeline). Package allows you to cache any function's result and return a cached result instead of calling same function again next time it is invoked.
 
-Code is super lightweight (<10KB), performance orientated and [memory friendly](##%20Memory%20management) with no memory leaks.
+Code is super lightweight (<10KB), performance orientated and [memory friendly](#memory-management) with no memory leaks.
 
 Code utilises [dynamic static type](https://learn.microsoft.com/en-us/dotnet/csharp/advanced-topics/interop/using-type-dynamic), which does not work with IL2CPP.
 
@@ -166,7 +166,7 @@ Due to the way memoized functions are cached, you can only have one `this.Once()
 All values are cached in [ConditionalWeakTable](https://learn.microsoft.com/en-us/dotnet/api/system.runtime.compilerservices.conditionalweaktable-2?view=net-7.0) by using object as a key. When object is destroyed, all memory is released and is made available for garbage collector to collect.
 
 ## Troubleshooting
-If you import package into your project and get `CacheStorage.cs(18,24): error CS0656: Missing compiler required member 'Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo` error, then ensure you followed [installation instructions]((##%20Installation) and set correct *Scripting backand & API compatibility level*
+If you import package into your project and get `CacheStorage.cs(18,24): error CS0656: Missing compiler required member 'Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo` error, then ensure you followed [installation instructions](#installation) and set correct *Scripting backand & API compatibility level*
 
 ## Licence
 Once you have purchased this package on [Unity's asset store](https://u3d.as/38ti) you are free to use it on any commercial projects of yours.
